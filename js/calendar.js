@@ -227,8 +227,8 @@
 	function getLunarCalendar(y,m,d){
 		var res={};
 		
-		var baseDate=new Date(1899,1,10);
-		var curDate=new Date(y,m-1,d);
+		var baseDate=Date.UTC(1899,1,10);
+		var curDate=Date.UTC(y,m-1,d);
 		var offset=(curDate-baseDate)/86400000; // 计算出当前日期到1899年1月10日所差的天数,(农历1899年1月1日)
 		
 		// 用offset依次减去每一年的天数,直至不够减,此时i就表示当前农历年份
